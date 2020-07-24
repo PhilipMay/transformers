@@ -18,10 +18,11 @@ word_embedding_model = models.Transformer(
     'T-Systems-onsite/bert-german-dbmdz-uncased-sentence-stsb')
 
 # Apply mean pooling to get one fixed sized sentence vector
-pooling_model = models.Pooling(word_embedding_model.get_word_embedding_dimension(),
-                               pooling_mode_mean_tokens=True,
-                               pooling_mode_cls_token=False,
-                               pooling_mode_max_tokens=False)
+pooling_model = models.Pooling(
+    word_embedding_model.get_word_embedding_dimension(),
+    pooling_mode_mean_tokens=True,
+    pooling_mode_cls_token=False,
+    pooling_mode_max_tokens=False)
 
 # join BERT model and pooling to get the sentence transformer
 model = SentenceTransformer(modules=[word_embedding_model, pooling_model])
