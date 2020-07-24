@@ -25,7 +25,8 @@ pooling_model = models.Pooling(
     pooling_mode_max_tokens=False)
 
 # join BERT model and pooling to get the sentence transformer
-model = SentenceTransformer(modules=[word_embedding_model, pooling_model])
+model = SentenceTransformer(
+    modules=[word_embedding_model, pooling_model])
 ```
 
 ## Model description
