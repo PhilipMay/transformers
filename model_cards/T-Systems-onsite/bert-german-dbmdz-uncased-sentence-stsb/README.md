@@ -46,4 +46,11 @@ We did an automatic hyperprameter optimization with [Optuna](https://github.com/
 - weight_decay = 0.02817210102940054
 - warmup_steps = 27.342745941760147 % of total steps
 
+## Training Results
 The final model was trained on the combination of all three datasets: `sts_de_dev.csv`, `sts_de_test.csv` and `sts_de_train.csv`
+
+If the model is just trained on the train set and tested on the test set the following metrics are reached:
+ - Cosine-Similarity :  Pearson: 0.8139 Spearman: 0.8112
+ - Manhattan-Distance: Pearson: 0.7923 Spearman: 0.7888
+ - Euclidean-Distance: Pearson: 0.7925 Spearman: 0.7889
+ - Dot-Product-Similarity: Pearson: 0.7596 Spearman: 0.7529
